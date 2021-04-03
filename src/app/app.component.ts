@@ -8,9 +8,7 @@ import { IProduct } from './product.model';
 })
 export class AppComponent {
   title = 'skate-shop';
-  
   names = ['Aaron', 'Mariam', 'Anastasia'];
-
   products: IProduct[] = [
     {
       id: '1',
@@ -54,19 +52,15 @@ export class AppComponent {
       price: 249.99,
       description: `Twister Edge is a highly-versatile and durable urban skate created for women. A new, anatomical Transfer footbed provides superior support with extra cushioning and shock-absorbing padding in the heel. The V-cut liner ensures breathability for comfort while molded boots, including an Anti-torsion Box, create an ideal fit. Aluminum plates and lateral sliders are built-in with torsional 243mm frame rigidity, adding power transfer and control. 80mm Supreme wheels paired with ILQ-7 Plus bearings provide excellent grip and speed. The secure closure system includes 45° micro-buckles and lacing; brake is included. Twister Edge is an excellent combination of premium fit, optimal support and advanced maneuverability for every urban skater.`
     }
-  ]; 
-
-  addNames() {
-    this.names.push(this.title)
+  ]
+  addNames(): void {
+    this.names.push(this.title);
   }
-
-  deleteNames(index: number) {
+  deleteNames(index: number): void {
     this.names.splice(index, 1);
   }
-
-  clickProduct(id:number){
+  clickProduct(id: number): void {
     console.log(id);
   }
 
 }
-
