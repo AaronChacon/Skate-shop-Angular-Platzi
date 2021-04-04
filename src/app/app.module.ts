@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from "./components/product.component";
 import { ExponentialPipe } from './pipe/exponential.pipe';
 import { HighlightDirective } from './directive/highlight.directive';
+import { HomeComponent } from './home/home.component';
+import { ProductsComponent } from './products/products.component';
+import { ContactComponent } from './contact/contact.component';
+import { DemoComponent } from './demo/demo.component';
 
 
 
@@ -16,7 +20,11 @@ import { HighlightDirective } from './directive/highlight.directive';
     AppComponent,
     ProductComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    HomeComponent,
+    ProductsComponent,
+    ContactComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
