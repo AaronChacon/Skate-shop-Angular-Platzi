@@ -1,4 +1,4 @@
-<div>
+<a [routerLink]="product.id">
     <h4 appHighlight > {{product.title | uppercase }} </h4>
     <div>
         <img 
@@ -9,9 +9,9 @@
     <p>{{product.price | currency }}</p>
     <p>{{today | date}}</p>
     <p>{{product.description | slice:0:155 }}...</p>
+</a>
 
-    <button (click)="addCard()" >
-        Buy
-    </button>
-</div>
+<button (click)="addCard()" >
+    Buy
+</button>
 
