@@ -1,8 +1,31 @@
-nav > a {
-    padding: 0 20px;
+mat-toolbar-row {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+            padding: 0 1rem;
+            margin: 0 .4rem;
+            &.active {
+                background-color: #f44336;
+                color: #fff;
+            }
+        }
+        .shoppin-cart {
+            padding: 0 1.25rem;
+            cursor: pointer;
+            .icon {
+                font-size: 1.25rem;
+                height: 1.25rem;
+                width: 1.25rem;
+            }
+        }
+    }
 
-    &.active {
-        background-color: red;
+    .nav-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
-

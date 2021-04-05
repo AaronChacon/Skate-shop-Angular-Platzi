@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// Modules
+import { MaterialModule } from '../material/material.module';
 //Directives
 import { HighlightDirective } from '../shared/directive/highlight.directive';
 //Pipes
@@ -22,7 +24,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     ExponentialPipe,

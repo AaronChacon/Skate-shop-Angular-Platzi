@@ -1,17 +1,21 @@
-<a [routerLink]="product.id">
-    <h4 appHighlight > {{product.title | uppercase }} </h4>
-    <div>
-        <img 
-            class="img"
-            [src]="product.image" 
-            [alt]="product.title" >
-    </div>
-    <p>{{product.price | currency }}</p>
-    <p>{{today | date}}</p>
-    <p>{{product.description | slice:0:155 }}...</p>
-</a>
+<h4 appHighlight > {{product.title | uppercase }} </h4>
+<div>
+    <img 
+        class="img"
+        [src]="product.image" 
+        [alt]="product.title" >
+</div>
+<p>{{product.price | currency }}</p>
+<p>{{today | date}}</p>
+<p>{{product.description | slice:0:155 }}...</p>
 
-<button (click)="addCard()" >
-    Buy
-</button>
+<div class="btn-container">
+    <button  mat-raised-button color="accent" (click)="addCard()" >
+        add to cart
+    </button>
+
+    <button  mat-raised-button color="primary" [routerLink]="product.id">
+        See Details
+    </button>
+</div>
 
