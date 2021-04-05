@@ -16,13 +16,19 @@ export class ProductsListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.products = this.productsService.getAllProducts();
-    console.log(this.products);
-    
+    this.fetchProducts();
   }
 
   clickProduct(id: number): void {
     console.log(id);
+  }
+
+  fetchProducts() {
+    this.productsService.getAllProducts()
+        .subscribe((products: IProduct[]) => {
+          this.products = products
+          console.log(products)
+        })
   }
 
 }

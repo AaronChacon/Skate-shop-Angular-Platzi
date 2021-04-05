@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from 'src/app/product.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  products: IProduct[] = [
+  /* products: IProduct[] = [
     {
       id: '1',
       image: 'assets/image/TWISTER-EDGE-X-RB.webp',
@@ -49,16 +50,21 @@ export class ProductsService {
       price: 249.99,
       description: `Twister Edge is a highly-versatile and durable urban skate created for women. A new, anatomical Transfer footbed provides superior support with extra cushioning and shock-absorbing padding in the heel. The V-cut liner ensures breathability for comfort while molded boots, including an Anti-torsion Box, create an ideal fit. Aluminum plates and lateral sliders are built-in with torsional 243mm frame rigidity, adding power transfer and control. 80mm Supreme wheels paired with ILQ-7 Plus bearings provide excellent grip and speed. The secure closure system includes 45° micro-buckles and lacing; brake is included. Twister Edge is an excellent combination of premium fit, optimal support and advanced maneuverability for every urban skater.`
     }
-  ]
+  ] */
 
-  constructor() { }
+  products: IProduct[] = []
+
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getAllProducts() {
-    return this.products;
+    return this.http.get<IProduct[]>('https://platzi-store.herokuapp.com/products');
   }
 
   getProduct(id: string) {
-    return this.products.find(item => id === item.id)
+    /* return this.products.find(item => id === item.id) */
+    return this.http.get<IProduct>(`https://platzi-store.herokuapp.com/products/${id}`);
   }
 
 }

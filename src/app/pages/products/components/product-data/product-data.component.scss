@@ -11,10 +11,15 @@ a {
     min-width: 100%;
 } */
 
+.mat-card {
+    background: #f4f4f4 !important;
+}
+
 .crop-image {
     display: block;
     height: 300px;
     width: 100%;
+    background: #f4f4f4;
     img {
       object-fit: contain;
       height: 100%;
