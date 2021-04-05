@@ -20,6 +20,7 @@ import { MaterialModule } from '../../material/material.module';
   imports: [
     CommonModule,
     ProductsRoutingModule,
+    MaterialModule,
     MaterialModule
   ]
 })
