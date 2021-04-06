@@ -4,12 +4,17 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { NavComponent } from './components/nav/nav.component';
 import { TableComponent } from './components/table/table.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProductsCatalogComponent } from './components/products-catalog/products-catalog.component';
 
 const routes: Routes = [
   {
     path: '',
     component: NavComponent,
     children: [
+      {
+        path: '',
+        component: DashboardComponent
+      },
       {
         path: 'create',
         component: ProductFormComponent
@@ -19,9 +24,9 @@ const routes: Routes = [
         component: TableComponent
       },
       {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
+        path: 'catalog',
+        component: ProductsCatalogComponent
+      }
     ]
   },
 ];

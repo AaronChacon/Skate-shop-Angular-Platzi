@@ -9,6 +9,7 @@ import { MaterialModule } from '../../material/material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TableComponent } from './components/table/table.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ProductsCatalogComponent } from './components/products-catalog/products-catalog.component';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { NavComponent } from './components/nav/nav.component';
     ProductFormComponent, 
     NavComponent, 
     TableComponent, 
-    DashboardComponent
+    DashboardComponent, ProductsCatalogComponent
   ],
   imports: [
     CommonModule,

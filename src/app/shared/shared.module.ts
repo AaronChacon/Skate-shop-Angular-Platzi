@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Modules
 import { MaterialModule } from '../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 //Directives
 import { HighlightDirective } from '../shared/directive/highlight.directive';
 //Pipes
@@ -10,7 +11,7 @@ import { ExponentialPipe } from '../shared/pipe/exponential.pipe'
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -24,7 +25,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   exports: [
