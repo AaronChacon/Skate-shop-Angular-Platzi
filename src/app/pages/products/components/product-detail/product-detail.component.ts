@@ -32,5 +32,43 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  createProduct() {
+
+    const newProduct: IProduct = {
+      id: '100',
+      title: 'TWISTER-EDGE-X',
+      image: 'assets/image/TWISTER-EDGE-X-RB.webp',
+      price: 329.99,
+      description: 'LoremIpsum'
+    }
+
+    this.productsService.createProduct(newProduct)
+    .subscribe((product: IProduct) => {
+      console.log(product);
+    });
+  }
+
+  updateProduct() {
+
+    const newProduct: Partial<IProduct> = {
+      title: 'TWISTER-EDGE-X',
+      image: 'assets/image/TWISTER-EDGE-X-RB.webp',
+      price: 329.99,
+      description: 'LoremIpsum'
+    }
+
+    this.productsService.updateProduct('1', newProduct)
+    .subscribe((product: IProduct) => {
+      console.log(product);
+    });
+
+  }
+
+  deleteProduct(id: string){
+    this.productsService.deleteProduct(id)
+    .subscribe((product: IProduct) => {
+      console.log(product);
+    });
+  }
 
 }
