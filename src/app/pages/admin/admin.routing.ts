@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductsCatalogComponent } from './components/products-catalog/products-catalog.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 const routes: Routes = [
   {
@@ -18,17 +19,21 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'create',
-        component: ProductFormComponent
-      },
-      {
         path: 'list',
         component: TableComponent
       },
       {
-        path: 'catalog',
+        path: 'products',
         component: ProductsCatalogComponent
-      }
+      },
+      {
+        path: 'products/create',
+        component: ProductFormComponent
+      },
+      {
+        path: 'products/edit/:id',
+        component: ProductEditComponent
+      },
     ]
   },
   {

@@ -12,6 +12,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ProductsCatalogComponent } from './components/products-catalog/products-catalog.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { RegisterComponent } from './components/register/register.component';
     ProductFormComponent, 
     NavComponent, 
     TableComponent, 
-    DashboardComponent, ProductsCatalogComponent, LoginComponent, RegisterComponent
+    DashboardComponent, ProductsCatalogComponent, LoginComponent, RegisterComponent, ProductEditComponent
   ],
   imports: [
     CommonModule,

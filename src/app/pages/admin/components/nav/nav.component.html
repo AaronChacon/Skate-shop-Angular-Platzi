@@ -7,8 +7,10 @@
     <mat-nav-list>
       <a mat-list-item [routerLink]="'/admin'">Dashboard</a>
       <a mat-list-item [routerLink]="'list'">Product list</a>
-      <a mat-list-item [routerLink]="'catalog'">Products catalog</a>
+      <a mat-list-item [routerLink]="'products'">Products catalog</a>
       <!-- <a mat-list-item [routerLink]="'create'">Create product</a> -->
+      
+      <a mat-list-item [routerLink]="'/'">Exit</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,7 +27,7 @@
       <button 
         class="btn-add" 
         mat-raised-button color="warn" 
-        [routerLink]="'create'"
+        [routerLink]="'products/create'"
         *ngIf="btnNP">
         New product
       </button>
