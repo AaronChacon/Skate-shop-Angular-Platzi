@@ -44,6 +44,10 @@
                 placeholder="Price" 
                 >
             </mat-form-field>
+            <div *ngIf="priceFiled.errors && priceFiled.dirty">
+              <p *ngIf="priceFiled.hasError('price_invalid') " >Invalid price - 10k max</p>
+              <p *ngIf="priceFiled.hasError('required')">Field require</p>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -63,7 +67,7 @@
         
         <div class="row">
           <div class="col-12">
-            <button mat-raised-button type="submit">Save</button>
+            <button mat-raised-button type="submit" [disabled]="form.invalid">Save</button>
           </div>
         </div>
 
