@@ -8,7 +8,7 @@
       <a mat-list-item [routerLink]="'/admin'">Dashboard</a>
       <a mat-list-item [routerLink]="'list'">Product list</a>
       <a mat-list-item [routerLink]="'catalog'">Products catalog</a>
-      <a mat-list-item [routerLink]="'create'">Create product</a>
+      <!-- <a mat-list-item [routerLink]="'create'">Create product</a> -->
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,6 +22,13 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>skate-shop</span>
+      <button 
+        class="btn-add" 
+        mat-raised-button color="warn" 
+        [routerLink]="'create'"
+        *ngIf="btnNP">
+        New product
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
