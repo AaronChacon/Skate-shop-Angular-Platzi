@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/product.model';
-import { ProductsService } from '../../../../core/services/products.service';
+import { ProductsService } from '../../../core/services/products.service';
 
 
 @Component({

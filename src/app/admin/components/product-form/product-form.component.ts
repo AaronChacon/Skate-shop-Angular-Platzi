@@ -3,9 +3,9 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Event, Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
-import { ProductsService } from '../../../../core/services/products.service';
-import { IProduct } from '../../../../product.model';
-import { MyValidators } from '../../../../utils/validators';
+import { ProductsService } from '../../../core/services/products.service';
+import { IProduct } from '../../../product.model';
+import { MyValidators } from '../../../utils/validators';
 import { Observable } from 'rxjs';
 
 @Component({
