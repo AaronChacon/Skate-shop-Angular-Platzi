@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "rollerclub-platzi": {
+      "hosting": {
+        "skate-shop": [
+          "rollerclub-platzi"
+        ]
+      }
+    }
+  }
+}

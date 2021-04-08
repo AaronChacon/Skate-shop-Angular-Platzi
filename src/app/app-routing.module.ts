@@ -25,14 +25,22 @@ const routes: Routes = [
       },
       {
         path: 'contact', 
-        canActivate: [ AdminGuard ],
         loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule),
+      },
+      {
+        path: 'order',
+        loadChildren: () => import('./pages/order/order.module').then(m => m.OrderModule),
       },
     ]
   },
   {
     path: 'admin', 
+    canActivate: [ AdminGuard ],
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
+  },
+  {
+    path: 'auth', 
+    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule),
   },
   {
     path: '**', 

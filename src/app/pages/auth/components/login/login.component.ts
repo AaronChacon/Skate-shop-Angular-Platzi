@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Event, Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private authService: AuthService,
   ) {
     this.buildForm();
   }
@@ -29,7 +31,19 @@ export class LoginComponent implements OnInit {
   }
 
   saveLogin() {
-    console.log(this.form.value);
+    if (this.form.valid) {
+      const value = this.form.value; 
+      this.authService.loginUser(value.email, value.password)
+          .then(() => {
+            this.router.navigate(['/admin'])
+            console.log('valid');
+          })
+          .catch(() => {
+            alert('User not valid')
+          })
+    }
+
+
   }
 
 }

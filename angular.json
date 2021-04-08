@@ -31,6 +31,7 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/swiper/swiper-bundle.css",
               "./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
+              "node_modules/flexboxgrid/dist/flexboxgrid.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -154,6 +155,10 @@
               "devServerTarget": "skate-shop:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

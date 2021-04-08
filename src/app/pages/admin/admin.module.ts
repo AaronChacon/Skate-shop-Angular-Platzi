@@ -10,8 +10,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TableComponent } from './components/table/table.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductsCatalogComponent } from './components/products-catalog/products-catalog.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 
@@ -20,7 +18,9 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ProductFormComponent, 
     NavComponent, 
     TableComponent, 
-    DashboardComponent, ProductsCatalogComponent, LoginComponent, RegisterComponent, ProductEditComponent
+    DashboardComponent, 
+    ProductsCatalogComponent, 
+    ProductEditComponent
   ],
   imports: [
     CommonModule,

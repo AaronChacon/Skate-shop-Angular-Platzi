@@ -1,8 +1,22 @@
 <div class="footer">
     <div class="container">
-        <div class="col-12">
-            <div class="row">
-                <div class="col-4">
+        <div class="row around-xs">
+            <div class="col-xs-2">
+                <div class="box">
+                    <a routerLink="admin">
+                        <h3>Admin</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="box">
+                    <a routerLink="auth">
+                        <h3>Auth</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="box">
                     <h3>Contact</h3>
                     <mat-form-field >
                         <mat-label>Email</mat-label>
@@ -18,11 +32,6 @@
                         (click)="sendMail()">
                         Send
                     </button>
-                </div>
-                <div class="col-4">
-                    <a routerLink="admin">
-                        <h3>Admin</h3>
-                    </a>
                 </div>
             </div>
         </div>

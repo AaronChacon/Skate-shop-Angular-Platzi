@@ -9,8 +9,11 @@
                 <a
                     class="shoppin-cart"
                     mat-raised-button 
-                    [matBadge]="total"
-                    matBadgeColor="warn">
+                    [matBadge]="total$ | async"
+                    matBadgeColor="warn"
+                    [routerLink]="'order'"
+                    routerLinkActive="active"
+                    >
                     <mat-icon class="icon">shopping_cart</mat-icon>
                 </a>
             </nav>
