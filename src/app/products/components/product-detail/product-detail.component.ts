@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 import { ProductsService } from '../../../core/services/products.service';
 import { IProduct } from '../../../product.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,7 +12,7 @@ import { IProduct } from '../../../product.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: IProduct;
+  product$: Observable<IProduct>;
 
 
   constructor(
@@ -19,16 +21,19 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params:Params) => {
-      const id = params.id;
-      this.fetchProduct(id);
-    });
+    this.product$ = this.route.params
+    .pipe(
+      switchMap((params:Params) => {
+        return this.productsService.getProduct(params.id)
+      })
+    )
   }
 
   fetchProduct(id: string) {
     this.productsService.getProduct(id)
     .subscribe((product: IProduct) => {
-      this.product = product
+      console.log(product);
+      
     });
   }
 
@@ -70,5 +75,27 @@ export class ProductDetailComponent implements OnInit {
       console.log(product);
     });
   }
+
+  getRandomUsers(){
+    this.productsService.getRandomUsers()
+        .subscribe( 
+          users => { // Good
+          console.log(users);
+        },
+        error => { // Error
+          console.error(error);
+        }
+        )
+  }
+
+  getFile(){
+    this.productsService.getFile()
+    .subscribe(file => {
+      console.log(file);
+      
+    })
+  }
+
+  
 
 }

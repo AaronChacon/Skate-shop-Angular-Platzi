@@ -1,4 +1,4 @@
-<div class="container" *ngIf="product">
+<div class="container" *ngIf="(product$ | async) as product">
     <img class="img" [src]="product.image" [alt]="product.title" >
     <div>
         <ul>
@@ -7,15 +7,25 @@
         </ul>
         <p> {{ product.description }} </p>
     </div>
-    <button mat-raised-button color="primary" (click)="createProduct()">
-        Create
-    </button>
-    
-    <button mat-raised-button color="accent" (click)="updateProduct()">
-        Update
-    </button>
-    
-    <button mat-raised-button color="primary" (click)="deleteProduct(product.id)">
-        Delete
-    </button>
+    <div class="btn-container">
+        <button mat-raised-button color="primary" (click)="createProduct()">
+            Create
+        </button>
+        
+        <button mat-raised-button color="accent" (click)="updateProduct()">
+            Update
+        </button>
+        
+        <button mat-raised-button color="primary" (click)="deleteProduct(product.id)">
+            Delete
+        </button>
+        
+        <button mat-raised-button color="accent" (click)="getRandomUsers()">
+            Ramdom Users
+        </button>
+        
+        <button mat-raised-button color="primary" (click)="getFile()">
+            File
+        </button>
+    </div>
 </div>
