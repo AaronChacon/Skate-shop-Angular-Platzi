@@ -4,6 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 // Guard
 import { AdminGuard } from './core/guard/admin.guard';
+import { PreloadService } from './core/services/preload.service';
 
 const routes: Routes = [
   { 
@@ -18,10 +19,12 @@ const routes: Routes = [
       {
         path: 'home', 
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+        data: { preload: true }
       },
       {
         path: 'products', 
         loadChildren: () => import('./products/products.module').then(m => m.ProductsModule),
+        data: { preload: true }
       },
       {
         path: 'contact', 
@@ -50,7 +53,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules,  
+    //preloadingStrategy: PreloadAllModules,  
+    preloadingStrategy: PreloadService,  
   })],
   exports: [RouterModule]
 })
