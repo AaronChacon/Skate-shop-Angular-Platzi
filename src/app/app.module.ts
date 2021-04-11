@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { QuicklinkModule } from 'ngx-quicklink';
 // Utils
 import { environment } from '../environments/environment';
 import { AuthInterceptor } from './auth.interceptor';
@@ -21,6 +22,7 @@ Sentry.init({
 // Components
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -42,6 +44,13 @@ import { LayoutComponent } from './layout/layout.component';
     CoreModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    QuicklinkModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     {
