@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IProduct } from 'src/app/product.model';
+import { IProduct } from 'src/app/core/models/product.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'; 
 import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';

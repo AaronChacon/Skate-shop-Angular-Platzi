@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { ProductsService } from '../../../core/services/products.service';
-import { IProduct } from '../../../product.model';
+import { IProduct } from '../../../core/models/product.model';
 import { Observable } from 'rxjs';
 
 @Component({

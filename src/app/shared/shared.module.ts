@@ -12,6 +12,7 @@ import { HeaderComponent } from '../shared/components/header/header.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { FibonacciPipe } from './pipe/fibonacci.pipe';
 
 
 
@@ -22,6 +23,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+    FibonacciPipe,
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+    FibonacciPipe
   ]
 })
 export class SharedModule { }
