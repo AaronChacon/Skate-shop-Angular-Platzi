@@ -58,7 +58,9 @@ const routes: Routes = [
     // preloadingStrategy: PreloadService,  
     // preloadingStrategy: QuicklinkStrategy,  
   })], */
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -34,7 +34,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     LayoutComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,

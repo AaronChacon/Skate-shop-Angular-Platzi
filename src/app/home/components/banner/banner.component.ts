@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 import { SwiperOptions } from 'swiper';
 
@@ -16,19 +17,29 @@ export class BannerComponent implements OnInit {
     'assets/image/banner-2.webp'
   ];
 
-  config: SwiperOptions = {
-    pagination: { 
-      el: '.swiper-pagination', 
-      clickable: true 
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    spaceBetween: 30
-  };  
+  
+  config: SwiperOptions = {}; 
 
-  constructor() { }
+  constructor(
+  
+    @Inject(PLATFORM_ID) private platformid: Object,
+  ) { 
+
+    if (isPlatformBrowser(this.platformid)) {
+      this.config = {
+        pagination: { 
+          el: '.swiper-pagination', 
+          clickable: true 
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        spaceBetween: 30
+      }; 
+    }
+
+  }
 
   ngOnInit(): void {
   }
