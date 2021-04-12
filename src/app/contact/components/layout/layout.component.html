@@ -1,4 +1,5 @@
-<app-list 
+<h1>Value: {{valueB$ | async}}</h1>
+<app-list  
     title="SalesList" 
     [data]="salesList"
     (add)="addItem(salesList, $event)">
